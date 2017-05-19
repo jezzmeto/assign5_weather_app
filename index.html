@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="mycss.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <!-- Large button group -->
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+            <span id="selectedArea">臺北市&nbsp&nbsp <span id="tempNow"></span> &#8451;</span> <span class="caret"></span>
+          </button>
+          <ul id="dropdown" class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="0" href="#">臺北市&nbsp&nbsp<span></span>&#8451;</a></li> <!-- &#8451; Degree C 的表示法-->
+                <li role="presentation"><a role="menuitem" tabindex="1" href="#">新北市&nbsp&nbsp<span></span>&#8451;</a></li> <!--tabindex 直接給每個地區一個編號 之後要叫比較方便-->
+                <li role="presentation"><a role="menuitem" tabindex="2" href="#">臺中市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="3" href="#">臺南市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="4" href="#">高雄市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="5" href="#">基隆市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="6" href="#">桃園市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="7" href="#">新竹市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="8" href="#">新竹縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="9" href="#">苗栗縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="10" href="#">彰化縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="11" href="#">南投縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="12" href="#">雲林縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="13" href="#">嘉義市&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="14" href="#">嘉義線&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="15" href="#">屏東縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="16" href="#">宜蘭縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="17" href="#">花蓮縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="18" href="#">臺東縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="19" href="#">澎湖縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="20" href="#">金門縣&nbsp&nbsp<span></span>&#8451;</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="21" href="#">連江縣&nbsp&nbsp<span></span>&#8451;</a></li>
+          </ul>
+        </div>
+        <div><span class="temperature">23</span> &#8451;</div> <!-- &#8451; Degree C 的表示法-->
+      </div>
+      <div class="col-xs-6">
+        <canvas id="today" width="100" height="100"></canvas>
+        <div class="condition">
+            <span class="date">Date</span>: <span id="description">Description</sapn> <!-- Make changes here-->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Forecast</div>
+
+              <!-- Table -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="forcast"></th>
+                    <th class="forcast"></th>
+                    <th class="forcast"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="range"></span>&#8451;</td> <!--之後插入溫度區間數值在span中間-->
+                    <td><span class="range"></span>&#8451;</td>
+                    <td><span class="range"></span>&#8451;</td>
+                  </tr>
+                  <tr>
+                    <td><canvas id="day1" width="64" height="64">Clear</canvas></td>
+                    <td><canvas id="day2" width="64" height="64">Mostly Sunny</canvas></td>
+                    <td><canvas id="day3" width="64" height="64">Mostly Cloudy</canvas></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
+  <script src="myapp.js"></script>
+</body>
+</html>
